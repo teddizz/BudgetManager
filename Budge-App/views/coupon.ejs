@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Budge | Coupons </title>
+  <link href = "stylesheets/style.css"  type="text/css" rel="stylesheet">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='Map.js' rel='stylesheet' type ='JavaScript' />
+</head>
+<body>
+<main>
+    <header class = "header">
+        <a href="/index">
+            <img src = "images/Header.png" height = "100" width="200">
+        </a>
+        <h2> Smarter Budget Management </h2>
+      <nav class = "navigation">
+        <ul>
+          <li>
+            <a href="/index">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/coupons">
+              Coupons
+            </a>
+          </li>
+          <li>
+            <a href="/settings">
+              <img src = "images/settings%20.png" height="20" width="20">
+            </a>
+          </li>
+        </ul>
+      </nav>        
+    </header>
+  <section id = "coupon-view">
+    <br><h3>Coupon Offers</h3><br>
+    <table class = "coupon-offers">
+      <tr>
+        <th>Weekly Promotions</th>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/groceries.png" height = "20" width="20">
+          Save 25% on groceries
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/travel.png" height = "20" width="20">
+          Save 10% on transportation
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/soccer-ball.png" height = "20" width="20">
+          Save 15% on sporting events
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/spotlights.png" height = "20" width="20">
+          Save 40% on concert tickets
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/cart.png" height = "20" width="20">
+          Save 25% on online shopping orders
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src = "images/game-boy.png" height = "20" width="20">
+          Save 10% on electronics
+        </td>
+      </tr>
+    </table><br>
+  </section>
+  <section id = "map-view">
+    <br><h3> Map View </h3><br>
+      <div id = "map" style = 'display: block; text-align: center; margin: auto; width: 500px; height: 500px;'></div>
+      <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoiaGZhamFyZG8iLCJhIjoiY2ptdGZhNGVoMDAyNjNwbGkzZTBqbnN0eCJ9.x8hCt8uDrhLWncxC7Lz9tA';
+          var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v10',
+              center: [-118.511,34.253], //CSUN area
+              zoom: 8
+          });
+      </script><br>
+  </section>
+</main>
+</body>
+</html>
