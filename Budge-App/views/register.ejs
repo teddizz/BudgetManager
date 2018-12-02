@@ -13,18 +13,20 @@
   <section>
     <h2>Sign Up, Become a Member Today!</h2>
     <div class = "center">
-      <form action = "/index">
+      <form  id="user_signup" method="POST" action = "./routes/index/signup">
         <input id = "namefield" type = "text" placeholder=" Username"></p>
 
         <input id = "passfield" type = "password" placeholder=" Password"></p>
 
         <input id = "idfield" type = "text" placeholder=" Email Address"><br><br>
 
-        <a href="/index">
+        <input type="submit" value="submit"/>
+
+        <!--<a href="/index">
             <button>
               Register
             </button>    
-        </a>
+        </a>-->
       </form>
     </div>
   </section>

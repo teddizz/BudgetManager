@@ -3,11 +3,41 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+//body-parser (middleware)
+var bodyParser = require('body-parser');
+// this variable is passing the data from the front-end form to the back end
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+/**********************************Mongoose*/
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/nodekb', {useNewUrlParser: true});
+let db = mongoose.connection;
+
+
+//check for succcessful connection
+db.once('open', function(){
+    console.log("Connected to mongoDB");
+});
+
+//check for db errors
+db.on('error', function(err){
+    console.log(err);
+});
+
+
+//Bring in Models
+let User = require('./models/users');
+
+
+/*****************************end of mongoose*/
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
