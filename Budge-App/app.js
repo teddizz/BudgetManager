@@ -12,10 +12,12 @@ var app = express();
 var bodyParser = require('body-parser');
 // this variable is passing the data from the front-end form to the back end
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.json());
+
 
 /**********************************Mongoose*/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/nodekb', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/BudgeNode', {useNewUrlParser: true});
 let db = mongoose.connection;
 
 
