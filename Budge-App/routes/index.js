@@ -44,13 +44,13 @@ router.post('/signup', function(req,res){
         if(err){
             console.log(err);
         }else{
+            // redirect the user to a success page!
            console.log("succesfully added")
         }
     });
 
 
-    /**remove this after redirecting the user to a success page!*/
-    return;
+
 });
 
 module.exports = router;
