@@ -11,26 +11,50 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 //app.use(bodyParser.json());
 
 
+
 /* GET home page. */
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 router.get('/coupons', function(req, res, next) {
-  res.render('coupon', { title: 'Express' });
+  res.render('coupon');
 });
 
 router.get('/settings', function(req, res, next) {
-  res.render('settings', { title: 'Express' });
+  res.render('settings');
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  res.render('login');
 });
 
 router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Express' });
+  res.render('register');
 });
+
+
+
+///* GET home page. */
+//router.get('/index', function(req, res, next) {
+//  res.render('index', { title: 'Express' });
+//});
+//
+//router.get('/coupons', function(req, res, next) {
+//  res.render('coupon', { title: 'Express' });
+//});
+//
+//router.get('/settings', function(req, res, next) {
+//  res.render('settings', { title: 'Express' });
+//});
+//
+//router.get('/login', function(req, res, next) {
+//  res.render('login', { title: 'Express' });
+//});
+//
+//router.get('/register', function(req, res, next) {
+//  res.render('register', { title: 'Express' });
+//});
 
 
 //router.post('/login', function(req, res){
@@ -67,7 +91,7 @@ passport.use(new LocalStrategy(
 
             if(!user){
                   console.log("unknown user")
-//                return done(null, false, {message: 'Unknown User'});
+                return done(null, false, {message: 'Unknown User'});
             }
 
             User.comparePassword(password, user.password, function(err, isMatch){
@@ -78,7 +102,7 @@ passport.use(new LocalStrategy(
                 }
                 else{
                     console.log("invalid password");
-//                    return done(null, false, {message:'Invalid password'});
+                    return done(null, false, {message:'Invalid password'});
                 }
             });
         })
@@ -119,9 +143,9 @@ router.post('/signup', function(req,res){
     if(errors){
         console.log("errors in register");
 
-//        res.render('signup',{
-//            errors: errors
-//        });
+        res.render('register',{
+            errors: errors
+        });
     }
     else{
         /**Here if all data fields are provided*/
@@ -129,7 +153,6 @@ router.post('/signup', function(req,res){
             if (err){
                 throw err
             }
-            console.log(user);
 
             if(!user){
                 /**If the userName does not exist, create the account*/
@@ -150,8 +173,8 @@ router.post('/signup', function(req,res){
 
                 console.log("Succesfully created a user!");
                 /**in order for this message to show we need to add a template in our layouts*/
-//                req.flash('success_msg', 'You are registered and can now log in');
-//                res.redirect('/login');
+                req.flash('success_msg', 'You are registered and can now log in');
+                res.redirect('login');
 
 //                let newUser = new User();
 //                newUser.username = req.body.username;

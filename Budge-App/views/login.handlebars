@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title> Budge | Home</title>
-  <link href = "stylesheets/style.css"  type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css maybe delete-->
+  <link href = "stylesheets/style.css"  type="text/css" rel="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href ="stylesheets/style.css">
 </head>
 <body>
 <main>
@@ -14,20 +14,23 @@
   <section>
    <h1>Welcome</h1>
     <div>
+
+      <div class="col-lg-12">
+       	 {{#if success_msg}}
+       	    <div class="alert alert-success">{{success_msg}}</div>
+      	 {{/if}}
+
+      	 {{#if error_msg}}
+      	    <div class="alert alert-danger">{{error_msg}}</div>
+   		 {{/if}}
+
+      	 {{#if error}}
+      	    <div class="alert alert-danger">{{error}}</div>
+      	 {{/if}}
+      		{{{body}}}
+      </div>
+
       <form method="POST" action="/login">
-
-        {{#if success_msg}}
-        	<div class="alert alert-success">{{success_msg}}</div>
-        {{/if}}
-
-        {#if error_msg}}
-        	<div class="alert alert-danger">{{error_msg}}</div>
-        {{/if}}
-
-        {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-        {{/if}}
-
         <label> Username: </label>
         <input id = "namefield"  type = "text" name="username"></p>
 
