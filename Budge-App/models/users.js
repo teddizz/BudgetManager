@@ -17,3 +17,8 @@ let userSchema = mongoose.Schema({
 });
 
 let User = module.exports = mongoose.model('User', userSchema)
+
+module.exports.getUserByUsername = function(username, callback){
+    var query = {username: username};
+    User.findOne(query, callback);
+}
