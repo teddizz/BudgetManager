@@ -3,16 +3,64 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var expressValidator = require('express-validator');
+
 
 var app = express();
 
-// view engine setup
+//body-parser (middleware)
+var bodyParser = require('body-parser');
+// this variable is passing the data from the front-end form to the back end
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.json());
+
+
+/**********************************Mongoose*/
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/BudgeNode', {useNewUrlParser: true});
+let db = mongoose.connection;
+
+
+//check for succcessful connection
+db.once('open', function(){
+    console.log("Connected to mongoDB");
+});
+
+//check for db errors
+db.on('error', function(err){
+    console.log(err);
+});
+
+
+//Bring in Models
+let User = require('./models/users');
+
+
+/*****************************end of mongoose*/
+
+// Express Validator
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
+///END OF EXPRESS Validator
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
