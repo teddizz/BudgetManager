@@ -6,6 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var expressValidator = require('express-validator');
+var flash = require('connect-flash');
+var passport = require('passport');
 
 
 var app = express();
@@ -34,10 +36,8 @@ db.on('error', function(err){
 });
 
 
-//Bring in Models
+//Bring in mongodb Models
 let User = require('./models/users');
-
-
 /*****************************end of mongoose*/
 
 // Express Validator
@@ -59,12 +59,24 @@ app.use(expressValidator({
 }));
 ///END OF EXPRESS Validator
 
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(logger('dev'));
+
+
+
+app.use(flash());
+/**Initialize passport*/
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+//Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -85,5 +97,17 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+/**Global messages for flash*/
+app.use(function(req,res,next){
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    //for the use of passport
+    res.locals.error = req.flash('error');
+    next();
+});
+/***/
 
 module.exports = app;
