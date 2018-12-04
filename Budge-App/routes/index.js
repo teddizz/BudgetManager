@@ -194,6 +194,8 @@ router.post('/signup', function(req,res){
             else{
                 /**If we are here its because the user name exists*/
                 console.log("Username alredy exists. Please choose another");
+                req.flash('username_taken_msg', 'The username already exists. Please provide another.');
+                res.redirect('register');
             }
 
         });

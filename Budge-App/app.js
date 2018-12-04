@@ -77,6 +77,7 @@ app.use(flash());
 app.use(function(req,res,next){
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.username_taken_msg = req.flash('username_taken_msg');
     //for the use of passport
     res.locals.error = req.flash('error');
     next();
