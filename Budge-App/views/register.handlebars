@@ -15,7 +15,7 @@
     <h2>Sign Up, Become a Member Today!</h2>
     <div class = "center">
 
-
+      <div class="col-lg-12">
       {{#if username_taken_msg}}
         <div class="alert alert-danger">{{username_taken_msg}}</div>
       {{/if}}
@@ -25,7 +25,7 @@
           	<div class="alert alert-danger">{{msg}}</div>
           {{/each}}
       {{/if}}
-
+      </div>
 
       <form  id="user_signup" method="POST" action = "/signup">
         <input id = "namefield" type = "text" placeholder=" Username" name="username"></p>

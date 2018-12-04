@@ -135,8 +135,8 @@ router.post('/signup', function(req,res){
     //*** Make sure all fields are provided
     req.checkBody('username', "User name is required").notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
-    req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('password', 'Password is required').notEmpty();
+    req.checkBody('email', 'Email is not valid').isEmail();
 
     var errors = req.validationErrors();
 
