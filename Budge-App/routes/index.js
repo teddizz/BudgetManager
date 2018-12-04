@@ -135,8 +135,8 @@ router.post('/signup', function(req,res){
     //*** Make sure all fields are provided
     req.checkBody('username', "User name is required").notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
-    req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('password', 'Password is required').notEmpty();
+    req.checkBody('email', 'Email is not valid').isEmail();
 
     var errors = req.validationErrors();
 
@@ -194,6 +194,8 @@ router.post('/signup', function(req,res){
             else{
                 /**If we are here its because the user name exists*/
                 console.log("Username alredy exists. Please choose another");
+                req.flash('username_taken_msg', 'The username already exists. Please provide another.');
+                res.redirect('register');
             }
 
         });
