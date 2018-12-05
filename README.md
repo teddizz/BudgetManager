@@ -4,4 +4,4 @@
 
 ## Start the application server
 
-## Check connection by entering the following into the browser: localhost:3000 
+## Check connection by entering the following into the browser: localhost:3000/index 
