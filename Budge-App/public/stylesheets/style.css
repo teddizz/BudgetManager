@@ -176,6 +176,14 @@ ul {
   margin: 0;
 }
 
+/*pie chart start*/
+.slice text {
+    font-size: 16pt;
+    font-family: Arial;
+}
+
+/*pie chart end*/
+
 /** Dropdown menu **//* Dropdown Button */
 .dropbtn {
   background-color: #b5b5b5;
