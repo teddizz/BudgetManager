@@ -283,6 +283,8 @@ ul {
 }
 .signpage h2{
     padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 button {
   background-color: #4CAF50;
