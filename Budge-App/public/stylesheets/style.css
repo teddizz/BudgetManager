@@ -262,7 +262,7 @@ ul {
 
 .lopage{
    margin-top: 150px;
-   height: 230px;
+   height: 260px;
    width: 400px;
    display: inline-block;
    position: center;
@@ -270,9 +270,15 @@ ul {
    border-radius: 15px;
    margin-bottom: 250px;
 }
+
+.lopage h1{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
 .signpage{
    margin-top: 140px;
-   height: 250px;
    max-height: 500px;
    width: 500px;
    display: inline-block;
