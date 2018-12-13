@@ -1,10 +1,9 @@
 
-var w = 500,                        //width
-h = 500,                            //height
-r = 250,                            //radius
+var w = 400,                        //width
+    h = 400,                        //height
+    r = 200,                        //radius
 color = d3.scale.ordinal()
 .range(["mediumpurple", "royalblue", "grey", "lightblue", "darkslategray", "red"]); //color scheme
-
 
 data = [{"label":"10%","value":10},
         {"label":"10%","value":10},
@@ -14,9 +13,9 @@ data = [{"label":"10%","value":10},
         {"label":"40%","value":40},
       ];
 
-
-var vis = d3.select("body")
-    .append("svg:svg")              //create the SVG element inside the <body>
+var vis = d3.select("#graph-view")
+    .append("svg:svg")
+    .attr("text-anchor", "middle")
     .data([data])                   //associate our data with the document
         .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
         .attr("height", h)

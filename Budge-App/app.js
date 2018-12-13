@@ -9,15 +9,12 @@ var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var passport = require('passport');
 
-
-
 /***********************HANDLE BARS*********************************/
 //Middle ware
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var session = require('express-session');
 //var localStrategy = require('passport-local').Strategy;
-
 
 //routes
 var routes = require('./routes/index');
@@ -89,7 +86,8 @@ app.use('/users', users);
 
 /**********************************Mongoose*/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/BudgeNode', {useNewUrlParser: true});
+//mongoose.connect('mongodb://172.22.0.2/BudgeDB', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/BudgeDB', {useNewUrlParser: true});
 let db = mongoose.connection;
 
 

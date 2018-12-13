@@ -10,7 +10,9 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 //app.use(bodyParser.json());
 
-
+router.get('/', function(req, res, next) {
+    res.render('login');
+});
 
 /* GET home page. */
 router.get('/index', function(req, res, next) {
@@ -23,10 +25,6 @@ router.get('/coupons', function(req, res, next) {
 
 router.get('/settings', function(req, res, next) {
   res.render('settings');
-});
-
-router.get('/login', function(req, res, next) {
-  res.render('login');
 });
 
 router.get('/register', function(req, res, next) {

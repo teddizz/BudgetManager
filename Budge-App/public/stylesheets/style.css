@@ -74,12 +74,6 @@ td img {
   background-color: lightpink;
 }
 
-.mapboxgl-canvas {
-  height: 10%;
-  width: 10%;
-  display: block;
-}
-
 .slide-container-row {
   background-color: slategray;
 }
@@ -141,8 +135,10 @@ img {
   padding-top: 0px;
 }
 
-.map {
-  text-align: center;
+#map {
+  width:60%;
+  height:400px;
+  margin:auto;
 }
 
 .framework-container {
@@ -150,25 +146,36 @@ img {
   margin: auto;
 }
 
+#graph-view {
+  background-color: #FAF0A8;
+  padding: 1%;
+}
+
 #coupon-view {
+  background-color: #FAF0A8;
   padding: 1%;
 }
 
 #data-view {
-  background-color: #9F9F9F;
+  background-color: #FFD7CE;
   padding: 1%;
 }
 
 #map-view {
-  background-color: #9F9F9F;
+  background-color: #FFD7CE;
   padding: 1%;
 }
 
 #settings-options {
+  background-color: #FAF0A8;
   padding: 1%;
 }
 
-#data-view h3, #map-view h3, #coupon-view h3, #settings-options h3 {
+#subheader {
+  font-family: 'Work Sans', sans-serif;
+}
+
+#data-view h3, #map-view h3, #coupon-view h3, #settings-options h3, #graph-view h3 {
   margin: 0;
 }
 
@@ -232,6 +239,10 @@ ul {
 
 .setting {
   height: 49px;
+}
+
+.setting a {
+  color: black;
 }
 
 .login {
