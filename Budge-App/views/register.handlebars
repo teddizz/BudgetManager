@@ -10,38 +10,10 @@
 <body>
 <main>
   <header class = "header">
-<<<<<<< HEAD
       <img src = "images/Header.png" height = "100" width="200">
       <h2 id = "subheader"> Smarter Budget Management </h2>
   </header>  
-  <section>
-=======
-       <a href="/index">
-          <img src = "images/Header.png" height = "100" width="200" float="left">
-      </a>
-          <h2 id="sub"> Smarter Budget Management </h2>
-        <nav class = "navigation">
-          <ul>
-            <li>
-              <a href="/index">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/coupons">
-                Coupons
-              </a>
-            </li>
-            <li>
-              <a href="/settings">
-                <img src = "images/settings%20.png" height="20" width="20">
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-  <section class="signpage">
->>>>>>> master
+  <section id = "registrationField">
     <h2>Sign Up, Become a Member Today!</h2>
     <div class = "center">
 
@@ -57,14 +29,14 @@
       {{/if}}
       </div>
       
-      <form  id="user_signup" method="POST" action = "/signup">
+      <form id="user_signup" method="POST" action = "/signup">
         <input id = "namefield" type = "text" placeholder=" Username" name="username"></p>
 
         <input id = "passfield" type = "password" placeholder=" Password" name="password"></p>
 
         <input id = "idfield" type = "text" placeholder=" Email Address" name="email"><br><br>
 
-        <input type="submit" value="submit"/>
+        <input id = "registerButton" type="submit" value="submit"/>
       </form>
     </div>
   </section>
