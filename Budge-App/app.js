@@ -97,7 +97,7 @@ app.use('/finance', finance);
 
 /**********************************Mongoose*/
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://172.22.0.2/BudgeDB', {useNewUrlParser: true});
+//mongoose.connect('mongodb://172.20.0.4/BudgeDB', {useNewUrlParser: true});
 mongoose.connect('mongodb://localhost:27017/BudgeDB', {useNewUrlParser: true});
 let db = mongoose.connection;
 
