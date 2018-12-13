@@ -82,6 +82,7 @@
     </table>
   </section>
   <section id = "map-view">
+<<<<<<< HEAD
     <br><h3> Map View </h3></br>
     <div id="map"></div>
     <script>
@@ -91,6 +92,19 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkPf4UAnSh9Uo8-ZRC1dcjemY2eHPShWo&callback=initMap"async defer>
     </script>
     
+=======
+    <br><h3> Map View </h3><br>
+      <div id = "map" style = 'display: block; text-align: center; margin: auto; width: 500px; height: 500px;'></div>
+      <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoiaGZhamFyZG8iLCJhIjoiY2ptdGZhNGVoMDAyNjNwbGkzZTBqbnN0eCJ9.x8hCt8uDrhLWncxC7Lz9tA';
+          var map = new mapboxgl.Map({
+              container: 'map',
+              style: 'mapbox://styles/mapbox/streets-v10',
+              center: [-118.529499,34.240029],
+              zoom: 14
+          });
+      </script><br>
+>>>>>>> master
   </section>
 </main>
 </body>
