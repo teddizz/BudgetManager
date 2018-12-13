@@ -17,8 +17,11 @@ var session = require('express-session');
 //var localStrategy = require('passport-local').Strategy;
 
 //routes
+var finance = require('./routes/finance.route'); // Imports routes for the products
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var api = require('./routes/api');
+
 //initialize app
 var app = express();
 
@@ -42,11 +45,9 @@ app.use(session({
     resave: true
 }));
 
-
 //passport initialization
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 // Express Validator
 app.use(expressValidator({
@@ -67,9 +68,16 @@ app.use(expressValidator({
 }));
 ///END OF EXPRESS Validator
 
+// Configure bodyparser to handle post requests
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
 
 //connect flash
 app.use(flash());
+
 /**Global messages for flash*/
 app.use(function(req,res,next){
     res.locals.success_msg = req.flash('success_msg');
@@ -77,12 +85,15 @@ app.use(function(req,res,next){
     res.locals.username_taken_msg = req.flash('username_taken_msg');
     //for the use of passport
     res.locals.error = req.flash('error');
+    req.db = db;
     next();
 });
 
+/********************* Define routes *********************/
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/finance', finance);
 
 /**********************************Mongoose*/
 var mongoose = require('mongoose');
@@ -111,7 +122,6 @@ let User = require('./models/users');
 //    console.log("Server started")
 //});
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -129,8 +139,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-/*******************************************************/
 
+/***************** Define Routes *****************/
 
 //
 //var app = express();
