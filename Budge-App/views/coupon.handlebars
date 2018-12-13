@@ -7,7 +7,8 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
-  <link href='Map.js' rel='stylesheet' type ='JavaScript' />
+  <script src="javascripts/map.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 </head>
 <body>
 <main>
@@ -15,7 +16,7 @@
         <a href="/index">
             <img src = "images/Header.png" height = "100" width="200">
         </a>
-        <h2> Smarter Budget Management </h2>
+        <h2 id = "subheader"> Smarter Budget Management </h2>
       <nav class = "navigation">
         <ul>
           <li>
@@ -37,7 +38,7 @@
       </nav>        
     </header>
   <section id = "coupon-view">
-    <br><h3>Coupon Offers</h3><br>
+    <br><h3>Coupon Offers</h3></br>
     <table class = "coupon-offers">
       <tr>
         <th>Weekly Promotions</th>
@@ -78,9 +79,20 @@
           Save 10% on electronics
         </td>
       </tr>
-    </table><br>
+    </table>
   </section>
   <section id = "map-view">
+<<<<<<< HEAD
+    <br><h3> Map View </h3></br>
+    <div id="map"></div>
+    <script>
+      initMap();
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkPf4UAnSh9Uo8-ZRC1dcjemY2eHPShWo&callback=initMap"async defer>
+    </script>
+    
+=======
     <br><h3> Map View </h3><br>
       <div id = "map" style = 'display: block; text-align: center; margin: auto; width: 500px; height: 500px;'></div>
       <script>
@@ -92,6 +104,7 @@
               zoom: 14
           });
       </script><br>
+>>>>>>> master
   </section>
 </main>
 </body>
