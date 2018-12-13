@@ -153,6 +153,7 @@ router.post('/signup', function(req,res){
             }
 
             if(!user){
+
                 /**If the userName does not exist, create the account*/
 
                 var newUser = new User({
@@ -172,7 +173,7 @@ router.post('/signup', function(req,res){
                 console.log("Succesfully created a user!");
                 /**in order for this message to show we need to add a template in our layouts*/
                 req.flash('success_msg', 'You are registered and can now log in');
-                res.redirect('login');
+                res.redirect('/');
 
 //                let newUser = new User();
 //                newUser.username = req.body.username;
