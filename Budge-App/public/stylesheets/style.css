@@ -191,7 +191,7 @@ img {
   padding: 1%;
 }
 
-#subheader {
+#subheader, #registration-header {
   font-family: 'Work Sans', sans-serif;
   color: black;
   font-weight: bold;
@@ -272,7 +272,7 @@ ul {
   text-align: center;
 }
 
-.lopage{
+.lopage, #registrationField {
    margin-top: 50px;
    height: 260px;
    width: 400px;
@@ -327,3 +327,20 @@ button {
 #welcomeMessage {
   font-family: 'Meddon', cursive;
 }
+
+#grey:hover div.section-explanation{
+  display: block;
+}
+
+.section-explanation {
+  width: 10%;
+  height: 10%;
+  background-color: black;
+}
+
+.section-explanation:hover {
+  display: none;
+  float: left;
+}
+
+
