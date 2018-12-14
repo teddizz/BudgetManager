@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-  background-color: rgb(250,128,114);
+  background-color: #fca1ca;
   text-align: center;
 }
 
@@ -75,11 +75,11 @@ td img {
 }
 
 .coupon-offers tr:hover td {
-  background-color: rgb(250,128,114);
+  background-color: #fca1ca;
 }
 
 .transaction-details tr:hover td {
-  background-color: rgb(250,128,114);
+  background-color: #fca1ca;
 }
 
 .slide-container-row {
@@ -116,7 +116,7 @@ h3 {
 }
 
 ul {
-  background-color: #FA8072;
+  background-color: #7c0e0e;
   padding: 0;
 }
 
@@ -176,13 +176,13 @@ img {
 }
 
 #data-view {
-  background-color: #FFD7CE;
+  background-color: #a3a3a3;
   padding: 1%;
   height: 350px;
 }
 
 #map-view {
-  background-color: #FFD7CE;
+  background-color: #a3a3a3;
   padding: 1%;
 }
 
@@ -253,7 +253,7 @@ ul {
 .dropdown:hover .dropdown-content {display: block; left: 38%; right: auto; text-align: center;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: rgb(250,128,114);}
+.dropdown:hover .dropbtn {background-color: #fca1ca;}
 
 .settings td {
   background-color: #b5b5b5;
@@ -278,7 +278,7 @@ ul {
    width: 400px;
    display: inline-block;
    position: center;
-   background-color: rgb(143,188,143,0.5);
+   background-color: #fcdca1;
    border-radius: 15px;
    margin-bottom: 250px;
 }
@@ -299,11 +299,13 @@ ul {
    border-radius: 15px;
    margin-bottom: 250px;
 }
+
 .signpage h2{
     padding-left: 50px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
 button {
   background-color: #4CAF50;
   padding: 14px 20px;
@@ -320,4 +322,8 @@ button {
 
 #user_signup {
   padding: 1%;
+}
+
+#welcomeMessage {
+  font-family: 'Meddon', cursive;
 }
