@@ -328,19 +328,3 @@ button {
   font-family: 'Meddon', cursive;
 }
 
-#grey:hover div.section-explanation{
-  display: block;
-}
-
-.section-explanation {
-  width: 10%;
-  height: 10%;
-  background-color: black;
-}
-
-.section-explanation:hover {
-  display: none;
-  float: left;
-}
-
-
