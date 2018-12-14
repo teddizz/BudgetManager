@@ -120,7 +120,7 @@ passport.deserializeUser(function(id,done){
 });
 
 
-router.post('/login', passport.authenticate('local', {successRedirect:'/index', failureRedirect:'/login', failureFlash:true}),
+router.post('/login', passport.authenticate('local', {successRedirect:'/index', failureRedirect:'/', failureFlash:true}),
 function(req,res){
     res.redirect('/index');
 });
