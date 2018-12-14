@@ -1,7 +1,7 @@
 
-var w = 400,                        //width
-    h = 400,                        //height
-    r = 200,                        //radius
+var w = 350,                        //width
+    h = 350,                        //height
+    r = 175,                        //radius
 color = d3.scale.ordinal()
 .range(["mediumpurple", "royalblue", "grey", "lightblue", "darkslategray", "red"]); //color scheme
 
